@@ -44,7 +44,7 @@ data class NonEmptyString private constructor(val s: String) {
     companion object {
         fun fromString(s: String): NonEmptyString {
             if (s.isEmpty()) {
-                throw Exception("Value can be empty string")
+                throw Exception("Value can not be empty string")
             }
             return NonEmptyString(s)
         }
