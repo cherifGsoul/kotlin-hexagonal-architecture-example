@@ -40,7 +40,8 @@ interface Books {
 // BUSINESS OBJECTS
 data class FullName(val fname: NonEmptyString, val lname: NonEmptyString)
 
-data class NonEmptyString private constructor(val s: String) {
+@JvmInline
+value class NonEmptyString private constructor(val s: String) {
     companion object {
         fun fromString(s: String): NonEmptyString {
             if (s.isEmpty()) {
@@ -48,6 +49,10 @@ data class NonEmptyString private constructor(val s: String) {
             }
             return NonEmptyString(s)
         }
+    }
+
+    override fun toString(): String {
+        return s
     }
 }
 
