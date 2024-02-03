@@ -14,7 +14,7 @@ data class CreateBookWithExistingAuthorInput(val title: String, val author: Stri
 
 class BookService (private val books: Books) {
 
-    fun createWithNewAuthor(input: CreateBookWithNewAuthorInput): BookData {
+    suspend fun createWithNewAuthor(input: CreateBookWithNewAuthorInput): BookData {
         val author = Author(
             UUID.randomUUID(),
             FullName(NonEmptyString.fromString(input.author.fname),

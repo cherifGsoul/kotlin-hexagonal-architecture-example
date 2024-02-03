@@ -15,8 +15,17 @@ plugins {
 }
 
 repositories {
+    google()
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+}
+
+sqldelight {
+    databases {
+        Database { // This will be the name of the generated database class.
+            packageName = "com.example"
+        }
+    }
 }
 
 dependencies {
@@ -37,6 +46,8 @@ dependencies {
     implementation "io.ktor:ktor-server-resources:2.3.8"
     implementation "io.ktor:ktor-server-content-negotiation:2.3.8"
     implementation "io.ktor:ktor-serialization-kotlinx-json:2.3.8"
+    implementation "io.ktor:ktor-server-default-headers:2.3.8"
+    implementation 'org.hibernate.orm:hibernate-core:6.4.3.Final'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
