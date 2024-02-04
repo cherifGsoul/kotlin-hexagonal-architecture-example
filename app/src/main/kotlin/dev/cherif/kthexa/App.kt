@@ -1,8 +1,8 @@
 package dev.cherif.kthexa
 
+import dev.cherif.kthexa.config.dependencies
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import dev.cherif.kthexa.config.dependencies
 
 fun main() {
     val dependencies = dependencies()
